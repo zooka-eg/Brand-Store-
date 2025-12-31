@@ -74,3 +74,11 @@ export default function App() {
   );
 }
 
+<script type="module">
+  import React from 'react';
+  import { createRoot } from 'react-dom/client';
+  import App from './App.tsx'; // تأكد من أن المسار صحيح
+
+  const root = createRoot(document.getElementById('root'));
+  root.render(React.createElement(App));
+</script>
