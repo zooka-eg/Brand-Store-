@@ -74,11 +74,27 @@ export default function App() {
   );
 }
 
-<script type="module">
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel" data-type="module">
   import React from 'react';
   import { createRoot } from 'react-dom/client';
-  import App from './App.tsx'; // تأكد من أن المسار صحيح
+  
+  // سنقوم بكتابة محتوى App هنا مباشرة مؤقتاً لضمان أنه سيعمل
+  function App() {
+    return (
+      <div style={{backgroundColor: '#0f172a', color: 'white', minHeight: '100vh', padding: '20px', textAlign: 'center'}}>
+        <h1 style={{color: '#fbbf24'}}>Brand Store</h1>
+        <p>جاري تحميل النظام الاحترافي...</p>
+        <button onClick={() => alert('سيتم تفعيل الـ GPS عند الطلب')} 
+                style={{backgroundColor: '#fbbf24', padding: '10px 20px', borderRadius: '10px', border: 'none', fontWeight: 'bold'}}>
+          طلب منتج من السوق
+        </button>
+      </div>
+    );
+  }
 
   const root = createRoot(document.getElementById('root'));
-  root.render(React.createElement(App));
+  root.render(<App />);
 </script>
+
